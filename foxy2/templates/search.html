@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recherche dans les articles</title>
+</head>
+<body>
+    <h2>🔎 Rechercher un article stocké</h2>
+    <form method="get" action="/search">
+        <input type="text" name="q" placeholder="Mot-clé..." value="{{ query or '' }}">
+        <button type="submit">Rechercher</button>
+    </form>
+
+    {% if articles %}
+        <ul>
+            {% for article in articles %}
+                <li>
+                    <strong>{{ article[2] }}</strong> —
+                    <a href="{{ article[1] }}" target="_blank">{{ article[0] }}</a>
+                    <em>({{ article[3] }})</em>
+                </li>
+            {% endfor %}
+        </ul>
+    {% elif query %}
+        <p>Aucun article trouvé pour « {{ query }} ».</p>
+    {% endif %}
+</body>
+</html>

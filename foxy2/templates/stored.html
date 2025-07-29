@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Articles enregistrés</title>
+</head>
+<body>
+    <h2>🗃️ Articles stockés dans la base</h2>
+    <ul>
+    {% for article in articles %}
+        <li>
+            <strong>{{ article[2].upper() }}</strong> – 
+            <a href="{{ article[1] }}" target="_blank">{{ article[0] }}</a> 
+            <em>({{ article[3] }})</em>
+        </li>
+    {% endfor %}
+    </ul>
+<a href="/export">
+    📥 Télécharger les articles (.csv)
+</a>
+
+</body>
+</html>
