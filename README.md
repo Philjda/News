@@ -12,4 +12,5 @@
 - ⚙️ Extensible : possibilité d’ajouter facilement de nouvelles sources
 
 ---
+La version 2  permet de rechercher dans les articles par mots clés et de stoker dans une BDD.
 
